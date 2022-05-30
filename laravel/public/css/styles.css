@@ -1,0 +1,40 @@
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    background-image: url("../images/background.png");
+}
+
+h1 {
+    margin-bottom: 40px;
+}
+
+
+header {
+    background-color: white;
+    padding: 50px;
+    width: 100%;
+}
+
+.nav-bar {
+    display: inline-flex;
+}
+
+.nav-bar div {
+    justify-content: flex-start;
+}
+
+
+.container {
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 800px;
+    width: 100%;    
+}
+
+form {
+    background-color: white;
+    padding: 50px;
+    max-width: 50%;
+    margin: auto;
+}
