@@ -14,10 +14,7 @@ class FaixaController extends Controller
 
         return view('faixas', ['faixas' => $faixas, 'idAlbum' => $idAlbum ]); 
     }
-
-    public function create($idAlbum) {
-        return view('createFaixa', ['idAlbum' => $idAlbum]);
-    }
+    
 
     public function store(Request $request) {
 
@@ -29,16 +26,23 @@ class FaixaController extends Controller
 
         $faixa->save();
         
-        return redirect('/faixas/' . $faixa->album_id)->with('msg' , 'Faixa criada com sucesso!');
+        // Caso utilize modelo de tabela no sistema
+        // return redirect('/faixas/' . $faixa->album_id)->with('msg' , 'Faixa criada com sucesso!');
+        
+        return redirect('/')->with('msg' , 'Faixa criada com sucesso!');
     }
 
 
-    public function destroy($idFaixa, $idAlbum) {
+    public function destroy($idFaixa) {
 
         Faixa::where('id', $idFaixa)->delete();
+        
+        // Caso utilize modelo de tabela no sistema
+        // return redirect('/faixas/' . $idAlbum)->with('msg' , 'Faixa excluida com sucesso!');
 
-        return redirect('/faixas/' . $idAlbum)->with('msg' , 'Faixa excluida com sucesso!');
+        return redirect('/')->with('msg' , 'Faixa excluída com sucesso!');
+
     }
 
 
-}
+}   

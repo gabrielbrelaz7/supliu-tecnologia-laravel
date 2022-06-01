@@ -10,7 +10,6 @@ use App\Models\Faixa;
 class AlbumController extends Controller
 {
     public function index() {
-        return view('createAlbum');    
          
     }
 
@@ -29,9 +28,8 @@ class AlbumController extends Controller
     public function destroy($idAlbum) {
 
         Albun::where('id', $idAlbum)->delete();
-        // Faixa::where('album_id', $idAlbum)->delete();
 
-        return redirect('/')->with('msg' , 'Álbum excluido com sucesso!');
+        return redirect('/')->with('msg' , 'Álbum excluído com sucesso!');
     }
 
 
